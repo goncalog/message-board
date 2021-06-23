@@ -8,4 +8,9 @@ feature 'users can go to main page' do
     visit '/'
     expect(page).to have_link 'See All Messages'
   end
+
+  scenario 'and see a link to add a message' do
+    visit '/'
+    expect(page).to have_link 'Add Message'
+  end
 end 
