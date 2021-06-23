@@ -13,4 +13,13 @@ feature 'users can go to main page' do
     visit '/'
     expect(page).to have_link 'Add Message'
   end
-end 
+end
+
+feature ' users can go to messages page' do
+  scenario 'and see all messages' do
+    visit '/messages'
+    expect(page).to have_content 'A message by Aurelius at 2021-06-23'
+    expect(page).to have_content 'A poem by Arthur at 2021-06-22'
+    expect(page).to have_content 'A song by Sinatra at 2021-06-21'
+  end
+end

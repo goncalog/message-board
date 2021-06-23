@@ -1,6 +1,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'db_helper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -19,7 +20,7 @@ Capybara.app = MessageBoard
 
 RSpec.configure do |config|
   config.before(:each) do
-
+    empty_and_populate_db
   end
 
   config.after(:suite) do
